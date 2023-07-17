@@ -10,4 +10,4 @@ items.forEach(item => { //проходим циклом по каждой кат
     console.log(`Category: ${title.textContent}`); // выводим содержимое н2
     const ulElementsCount = item.querySelectorAll('li'); // находим в айтеме li-шки
     console.log(`Elements: ${ulElementsCount.length}`); // выводим длину ulElementsCount
-})
+});
