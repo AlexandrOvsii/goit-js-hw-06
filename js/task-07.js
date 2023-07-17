@@ -6,4 +6,4 @@ sizeControl.addEventListener("input", changeSize);
 function changeSize() {
   const fontValue = sizeControl.value + "px";
   textEl.style.fontSize = fontValue; //присваиваем textEl - его стилям - размеру шрифта = значение переменной fontValue, которое будет меняться
-}
+};
