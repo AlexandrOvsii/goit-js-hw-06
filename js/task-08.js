@@ -1,5 +1,4 @@
 const loginForm = document.querySelector(".login-form"); //достукиваемся до формы
-//
 
 loginForm.addEventListener("submit", function (event) {
   //пишем ивент, чтобы сбросить базовые настройки браузера
