@@ -1,12 +1,12 @@
 const inputEl = document.getElementById("name-input");
 const outputEl = document.getElementById("name-output");
 
-function setName(event) {
-  let name = inputEl.value;
-  if (name === "") {
+function setName() {
+  let name = inputEl.value; //присваиваем переменной нейм значение, которое приходит из inputEl.value
+  if (name === "") { //условие, если нейм === пустой строке - значит нейм = анонимусу
     name = "Anonymous";
   }
-  outputEl.textContent = name;
+  outputEl.textContent = name; //ELSE, если строка НЕ пустая то в аутпут запишется значение, которое приходит из inputEl.value
 }
 
 inputEl.addEventListener("input", setName);
