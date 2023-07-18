@@ -1,6 +1,14 @@
 const inputEl = document.getElementById("name-input");
 const outputEl = document.getElementById("name-output");
 
+function setName(event) {
+  let name = inputEl.value;
+  if (name === "") {
+    name = "Anonymous";
+  }
+  outputEl.textContent = name;
+}
+
 inputEl.addEventListener("input", setName);
 
 // const setName = () => {
@@ -10,6 +18,8 @@ inputEl.addEventListener("input", setName);
 //     }
 //     outputEl.innerHTML = name; //елс, в аутпут присваивается значение нейм, которое вводится в инпут.велюе
 // }
+
+
 
 //вместо innerHTML --- textContent;
 
@@ -23,10 +33,3 @@ inputEl.addEventListener("input", setName);
 
 //
 
-function setName(event) {
-  let name = inputEl.value;
-  if (name === "") {
-    name = "Anonymous";
-  }
-  outputEl.textContent = event.currentTarget.value;
-}
