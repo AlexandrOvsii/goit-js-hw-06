@@ -1,9 +1,9 @@
-const sizeControl = document.getElementById("font-size-control"); //достукиваемся до инпута по ай-ди
-const textEl = document.getElementById("text"); //достукиваемся до спана с текстом
+const inputEl = document.getElementById("font-size-control");
+const spanEl = document.getElementById("text");
 
-sizeControl.addEventListener("input", changeSize);
+inputEl.addEventListener("input", changeFontSize);
 
-function changeSize() {
-  const fontValue = sizeControl.value + "px";
-  textEl.style.fontSize = fontValue; //присваиваем textEl - его стилям - размеру шрифта = значение переменной fontValue, которое будет меняться
-};
+function changeFontSize() {
+  const inputValue = inputEl.value;
+  spanEl.style.fontSize = inputValue + "px";
+}

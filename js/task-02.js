@@ -7,7 +7,9 @@ const ingredients = [
   "Condiments",
 ];
 
-const ingredientsArr = []; //создаем пустой массив
+const ingredientsUl = document.getElementById("ingredients");
+
+const ingredientsArr = [];
 
 ingredients.forEach((ingredient) => {
   const liEl = document.createElement("li");
@@ -16,5 +18,4 @@ ingredients.forEach((ingredient) => {
   ingredientsArr.push(liEl);
 });
 
-const ingredientsEl = document.getElementById("ingredients");
-ingredientsEl.append(...ingredientsArr);
+ingredientsUl.append(...ingredientsArr);

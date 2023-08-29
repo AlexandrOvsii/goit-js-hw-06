@@ -1,16 +1,18 @@
-const inputEl = document.getElementById("validation-input"); //достукиваемся до инпута
-const validLength = inputEl.dataset.length; //получаем валидное значение из атрибута data-length
+const inputEl = document.getElementById("validation-input");
 
-inputEl.addEventListener("blur", onBlur); //добавляем слушателя событий блюр и в колл-бек записываем функцию
+inputEl.addEventListener("blur", onBlur);
 
 function onBlur() {
-  if (inputEl.value.length < inputEl.getAttribute("data-length") || inputEl.value.length > inputEl.getAttribute("data-length")) {
-    //условие - если значение атрибута data-length меньше значения inputEl.value.length(длины value)
-    inputEl.classList.remove("valid"); //удаляем класс из списка классов элемента.
-    inputEl.classList.add("invalid"); //добавляем класс из списка классов элемента.
+  const inputValue = inputEl.value.length;
+  const inputLength = Number(inputEl.dataset.length);
+  console.log(inputValue);
+  console.log(inputLength);
+
+
+  if (inputValue === inputLength) {
+    inputEl.classList.remove("invalid"); 
+    inputEl.classList.add("valid"); 
   } else {
-    //если условие не выполнено и inputEl.value.length больше, то:
-    inputEl.classList.remove("invalid"); //удаляем класс из списка классов элемента.
-    inputEl.classList.add("valid"); //добавляем класс из списка классов элемента.
+    inputEl.classList.add("invalid"); 
   }
 }

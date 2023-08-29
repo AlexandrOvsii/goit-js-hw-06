@@ -14,6 +14,6 @@ itemsEl.forEach((item) => {
   //проходим циклом по каждой категории
   const title = item.firstElementChild; //(либо item.firstElementChild.textContent)
   console.log(`Category: ${title.textContent}`); // выводим содержимое первого дочернего эл-та 
-  const ulElementsCount = item.lastElementChild.children; // находим в айтеме li-шки через посл. дочерний узел lastElementChild и дочерние узлы в нем 
+  const ulElementsCount = item.lastElementChild.children; // находим в айтеме li-шки через посл. дочерний узел айтема lastElementChild и дочерние узлы в нем 
   console.log(`Elements: ${ulElementsCount.length}`); // выводим длину ulElementsCount
 });
