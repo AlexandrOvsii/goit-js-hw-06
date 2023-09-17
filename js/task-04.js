@@ -1,23 +1,23 @@
+const decrementBtn = document.querySelector('[data-action="decrement"]');
+const spanEl = document.getElementById("value");
+const incrementBtn = document.querySelector('[data-action="increment"]');
 
-const counterEl = document.getElementById("counter"); //достукиваемся до дива с айди counter
+console.log(decrementBtn);
+console.log(spanEl.textContent);
+console.log(incrementBtn);
 
-const incrementBtn = counterEl.querySelector('[data-action="increment"]'); //создаем переменную, в которую вкладываем кнопку увеличения на +1
-const decrementBtn = counterEl.querySelector('[data-action="decrement"]'); //создаем переменную, в которую вкладываем кнопку уменьшения на -1
-const valueEl = document.getElementById("value"); //достукиваемся до спана со значением "0"
+let counterValue = 0;
 
-incrementBtn.addEventListener("click", handleIncrementNumber); //задаем слушателя событий "клик" на incrementBtn и в колл-бек записываем функцию увеличения
-decrementBtn.addEventListener("click", handleDecrementNumber);
+decrementBtn.addEventListener("click", onDecrement);
+incrementBtn.addEventListener("click", onIncrement);
 
-let counterValue = 0; //создаем переменную по условию и назначаем ей "0"
 
-const handleIncrementNumber = () => {
-  //создаем функцию по увеличению каунта
-  counterValue += 1; //задаем переменной counterValue условие, что при каждой работе функции counterValue будет увеличиваться на 1
-  valueEl.innerHTML = counterValue; //присваиваем valueEl переменную counterValue, которая в этой функции изменяет свое значение на +1
-};
+function onDecrement() {
+  counterValue -= 1
+  spanEl.textContent = counterValue;
+}
 
-const handleDecrementNumber = () => {
-  //создаем функцию по уменьшению каунта
-  counterValue -= 1; //задаем переменной counterValue условие, что при каждой работе функции counterValue будет уменьшаться на 1
-  valueEl.innerHTML = counterValue; //присваиваем valueEl переменную counterValue, которая в этой функции изменяет свое значение на -1
-};
+function onIncrement() {
+  counterValue += 1
+  spanEl.textContent = counterValue;
+}

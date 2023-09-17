@@ -1,20 +1,17 @@
-const loginForm = document.querySelector(".login-form");
+const form = document.querySelector(".login-form");
 
-loginForm.addEventListener("submit", onSubmitForm);
+form.addEventListener("submit", sendForm);
 
-function onSubmitForm(evt) {
+function sendForm(evt) {
   evt.preventDefault();
-  const emailVal = loginForm.elements.email.value;
-  const passwVal = loginForm.elements.password.value;
 
-  const submitForm = {};
+  const email = form.elements.email.value;//либо через форм либо через евент.таргет
+  const password = evt.target.elements.password.value;//либо через форм либо через евент.таргет
 
-  if (emailVal === "" || passwVal === "") {
-    console.log(alert("все поля должны быть заполнены"));
+  if(email === '' || password === ''){
+    alert('все поля должны быть заполнены')
   } else {
-    submitForm.name = emailVal;
-    submitForm.password = passwVal;
-    console.log(submitForm);
-    loginForm.reset();
+    console.log({'email': email, 'password': password})
+    form.reset()
   }
 }

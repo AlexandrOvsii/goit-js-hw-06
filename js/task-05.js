@@ -1,23 +1,15 @@
 const inputEl = document.getElementById("name-input");
 const outputEl = document.getElementById("name-output");
 
-inputEl.addEventListener("input", onChangeInput);
+inputEl.addEventListener("input", onInput);
 
-function onChangeInput() {
-  let value = inputEl.value;
+function onInput(event) {
+  const input = event.target.value;
 
-  if (value === "") {
-    outputEl.innerHTML = "Anonymous";
+  if (input === "") {
+    outputEl.textContent = "Anonymous";
   } else {
-    outputEl.innerHTML = value;
+    outputEl.textContent = input;
   }
 }
 
-// function setName(event) {
-//   let name = event.target.value;
-//   if (name === "") {
-//     outputEl.textContent = "Anonymous";
-//   } else {
-//     outputEl.textContent = name;
-//   }
-// }

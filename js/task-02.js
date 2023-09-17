@@ -7,15 +7,25 @@ const ingredients = [
   "Condiments",
 ];
 
-const ingredientsUl = document.getElementById("ingredients");
+const ingredientsEl = document.getElementById('ingredients');
 
-const ingredientsArr = [];
 
-ingredients.forEach((ingredient) => {
-  const liEl = document.createElement("li");
-  liEl.textContent = `${ingredient}`;
-  liEl.classList = "item";
-  ingredientsArr.push(liEl);
-});
+// ingredients.forEach(ingredient => {
+//   const liEl = document.createElement('li')
+//   liEl.textContent = ingredient
+//   liEl.classList.add('item')
+// console.log(liEl)
+//   // ingredientsEl.insertAdjacentHTML('beforeend', liEl)
+//   ingredientsEl.append(liEl)
+// })
+let markup = [];
 
-ingredientsUl.append(...ingredientsArr);
+ingredients.forEach(ingredient => {
+  const liEl = document.createElement('li')
+  liEl.textContent = ingredient
+  liEl.classList.add('item')
+console.log(liEl)
+  markup.push(liEl)
+  ingredientsEl.append(liEl)
+
+})

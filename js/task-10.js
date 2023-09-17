@@ -1,34 +1,37 @@
-const input = document.querySelector('input[type="number"]');
+const controlsEl = document.getElementById("controls");
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
-const divArea = document.getElementById("boxes");
+const divArray = document.getElementById("boxes");
 
-createBtn.addEventListener("click", getInputValue);
+const inputElement = controlsEl.querySelector('input[type="number"]');
+
+createBtn.addEventListener("click", createArr);
 destroyBtn.addEventListener("click", destroyBoxes);
 
-function getInputValue() {
-  const amount = input.value;
-  createBoxes(amount);
+function createArr(evt) {
+  let inputCount = inputElement.value;
+  createBoxes(inputCount);
 }
 
+let size = 30;
+
 function createBoxes(amount) {
-  let width = 0;
-  let height = 0;
-
   for (let i = 1; i <= amount; i += 1) {
-    const divEl = document.createElement("div");
-    width += 10;
-    height += 10;
-    divEl.style.width = `${width}` + "px";
-    divEl.style.height = `${height}` + "px";
-    divEl.style.backgroundColor = getRandomHexColor();
+    const markup = document.createElement("div");
+    markup.textContent = i;
+    markup.style.width = size + "px";
+    markup.style.height = size + "px";
+    size += 10;
+    markup.style.backgroundColor = getRandomHexColor();
 
-    divArea.append(divEl);
+    divArray.append(markup);
+    
   }
 }
 
 function destroyBoxes() {
-  divArea.innerHTML = "";
+  divArray.innerHTML = ""
+  size = 30;
 }
 
 function getRandomHexColor() {
@@ -36,5 +39,3 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-
-//теперь мне нужно добавить эти <div> в дом элемент
